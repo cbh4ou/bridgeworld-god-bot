@@ -1,14 +1,10 @@
-const Web3 = require('web3');
+import { web3 } from "./Web3";
 const track = require('./action-tracker');
 const transaction = require('./transaction');
 const discord = require('./discord');
 
 const QUESTING_CONTRACT_ADDRESS = process.env.QUESTING_CONTRACT_ADDRESS
 const SECRET_KEY = process.env.SECRET_KEY;
-
-const provider = new Web3.providers.HttpProvider(process.env.INFURA);
-
-const web3 = new Web3(provider)
 
 const abi = require('../contracts/Questing.json');
 const QuestingContract = new web3.eth.Contract(abi, process.env.QUESTING_CONTRACT_ADDRESS);

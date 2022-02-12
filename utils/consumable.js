@@ -1,10 +1,7 @@
 const axios = require('axios');
-const Web3 = require('web3');
-
+import { web3 } from "./Web3";
 const { CONSUMABLE_CONTRACT_ADDRESS } = process.env;
 
-const provider = new Web3.providers.HttpProvider(process.env.INFURA);
-const web3 = new Web3(provider)
 const abi = require('../contracts/Consumable.json');
 const ConsumableContract = new web3.eth.Contract(abi, CONSUMABLE_CONTRACT_ADDRESS);
 

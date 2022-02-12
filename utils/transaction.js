@@ -1,9 +1,6 @@
-const Web3 = require('web3');
-const provider = new Web3.providers.HttpProvider(process.env.INFURA);
-
+import { web3 } from "./Web3";
 const { SECRET_KEY } = process.env;
 
-const web3 = new Web3(provider)
 
 module.exports = {
     signTransaction: async function({to, method, address}){
